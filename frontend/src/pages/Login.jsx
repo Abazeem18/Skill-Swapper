@@ -21,11 +21,11 @@ function Login() {
       return;
     }
 
-    // ✅ Get Supabase user ID
+    //  Get Supabase user ID
     const supabaseId = data.user.id;
 
     try {
-      // ✅ Check if user already has skills
+      // Check if user already has skills
       const response = await fetch(
         `http://localhost:5000/check-skills/${supabaseId}`
       );
@@ -66,7 +66,7 @@ function Login() {
 
         <button onClick={handleLogin}>Login</button>
 
-        {/* ❌ Error Message */}
+        {/*  Error Message */}
         {errorMessage && (
           <p style={{ color: "red", marginTop: "10px" }}>
             {errorMessage}

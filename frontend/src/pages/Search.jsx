@@ -8,13 +8,13 @@ function Search() {
   const [results, setResults] = useState([]);
   const [user, setUser] = useState(null);
 
-  const navigate = useNavigate(); // ✅ Navigation hook
+  const navigate = useNavigate(); //  Navigation hook
 
   useEffect(() => {
     loadUser();
   }, []);
 
-  // ✅ Get logged-in user
+  //  Get logged-in user
   const loadUser = async () => {
     const { data } = await supabase.auth.getSession();
     if (data.session) {
@@ -22,7 +22,7 @@ function Search() {
     }
   };
 
-  // 🔍 Search users
+  //  Search users
   const handleSearch = async () => {
     if (!skill.trim()) {
       alert("Enter a skill");
@@ -35,7 +35,7 @@ function Search() {
     setResults(data);
   };
 
-  // 📩 Send swap request
+  //Send swap request
   const sendRequest = async (toUserId, requestedSkill) => {
     if (!user) {
       alert("Login required");
@@ -68,7 +68,7 @@ function Search() {
     <div className="auth-page wide">
       <div className="auth-container wide">
 
-        {/* ✅ BACK BUTTON */}
+        {/*  BACK BUTTON */}
         <button 
           onClick={() => navigate("/dashboard")}
           style={{
@@ -86,7 +86,7 @@ function Search() {
 
         <h2>Search Users by Skill</h2>
 
-        {/* 🔍 Search Bar */}
+        {/*  Search Bar */}
         <input
           type="text"
           placeholder="Enter skill (React, Java, Python...)"

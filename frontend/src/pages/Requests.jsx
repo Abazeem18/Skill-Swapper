@@ -33,7 +33,7 @@ function Requests() {
     setRequests(requestsData);
   };
 
-  // ✅ Accept request
+  //  Accept request
   const acceptRequest = async (id) => {
     const res = await fetch(
       `http://localhost:5000/accept-request/${id}`,
@@ -46,7 +46,7 @@ function Requests() {
     loadUserAndRequests();
   };
 
-  // ✅ Reject request
+  //  Reject request
   const rejectRequest = async (id) => {
     const res = await fetch(
       `http://localhost:5000/reject-request/${id}`,
@@ -63,7 +63,7 @@ function Requests() {
     <div className="auth-page wide">
       <div className="auth-container wide">
 
-        {/* ✅ BACK BUTTON */}
+        {/*  BACK BUTTON */}
         <button 
           onClick={() => navigate("/dashboard")}
           style={{
@@ -92,7 +92,7 @@ function Requests() {
             <p><b>They offer:</b> {req.offeredSkill}</p>
             <p><b>Status:</b> {req.status}</p>
 
-            {/* ✅ Accept / Reject only visible to receiver */}
+            {/*  Accept / Reject only visible to receiver */}
             {user?.id === req.toUser && req.status === "pending" && (
               <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
                 <button
@@ -111,7 +111,7 @@ function Requests() {
               </div>
             )}
 
-            {/* ✅ Chat button only after accepted */}
+            {/*  Chat button only after accepted */}
             {req.status === "accepted" && (
               <button
                 onClick={() =>

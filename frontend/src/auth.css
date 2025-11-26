@@ -14,7 +14,7 @@ body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-/* ✅ PAGE WRAPPER */
+/* PAGE WRAPPER */
 .auth-page {
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
 }
 
-/* ✅ MAIN CONTAINER */
+/*  MAIN CONTAINER */
 .auth-container {
   width: 100%;
   max-width: 950px;
@@ -49,7 +49,7 @@ body {
   max-width: 1200px;
 }
 
-/* ✅ HEADINGS */
+/* HEADINGS */
 h2, h3 {
   margin-bottom: 15px;
   text-align: center;
@@ -63,7 +63,7 @@ hr {
   margin: 20px 0;
 }
 
-/* ✅ INPUTS */
+/*  INPUTS */
 input {
   width: 100%;
   padding: 12px;
@@ -79,7 +79,7 @@ input:focus {
   box-shadow: 0 0 8px #00c6ff;
 }
 
-/* ✅ BUTTONS */
+/*  BUTTONS */
 button {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
@@ -106,7 +106,7 @@ button.green {
   background: linear-gradient(135deg, #56ab2f, #a8e063);
 }
 
-/* ✅ LINK TEXT */
+/*  LINK TEXT */
 .switch-link {
   display: block;
   text-align: center;
@@ -116,7 +116,7 @@ button.green {
   font-size: 14px;
 }
 
-/* ✅ CARDS */
+/*  CARDS */
 .card {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -132,7 +132,7 @@ button.green {
   transition: 0.2s ease;
 }
 
-/* ✅ CHAT UI */
+/* CHAT UI */
 .chat-container {
   height: 80vh;
   display: flex;
@@ -167,7 +167,7 @@ button.green {
   max-width: 70%;
 }
 
-/* ✅ INPUT BAR */
+/*  INPUT BAR */
 .chat-input {
   display: flex;
   gap: 10px;
@@ -175,7 +175,7 @@ button.green {
   background: rgba(255,255,255,0.05);
 }
 
-/* ✅ ANIMATIONS */
+/*  ANIMATIONS */
 @keyframes fadeIn {
   from {
     transform: translateY(25px);
@@ -198,7 +198,7 @@ button.green {
   }
 }
 
-/* ✅ MOBILE RESPONSIVE */
+/*  MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .auth-container {
     padding: 20px;

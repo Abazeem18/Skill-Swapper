@@ -10,12 +10,12 @@ function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  // ✅ Load user on page load
+  //  Load user on page load
   useEffect(() => {
     loadUser();
   }, []);
 
-  // ✅ Auto refresh messages every 1 second
+  //  Auto refresh messages every 1 second
   useEffect(() => {
     if (!user) return;
 
@@ -45,7 +45,7 @@ function Chat() {
     setMessages(data);
   };
 
-  // ✅ Fast sending with Optimistic UI
+  //  Fast sending with Optimistic UI
   const sendMessage = async () => {
     if (!message.trim() || !user) return;
 
@@ -56,7 +56,7 @@ function Chat() {
       createdAt: new Date()
     };
 
-    // ✅ Show instantly before server response
+    //  Show instantly before server response
     setMessages((prev) => [...prev, newMsg]);
 
     const tempMessage = message;
@@ -89,7 +89,7 @@ function Chat() {
           Chat Window
         </h3>
 
-        {/* ✅ Messages */}
+        {/*  Messages */}
         <div
           style={{
             flex: 1,
@@ -124,7 +124,7 @@ function Chat() {
           ))}
         </div>
 
-        {/* ✅ Message Input */}
+        {/* Message Input */}
         <div
           style={{
             display: "flex",

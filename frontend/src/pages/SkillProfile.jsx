@@ -13,7 +13,7 @@ function SkillProfile() {
     fetchSessionUser();
   }, []);
 
-  // ✅ Get logged-in user from Supabase
+  //  Get logged-in user from Supabase
   const fetchSessionUser = async () => {
     try {
       const { data, error } = await supabase.auth.getSession();
@@ -34,7 +34,7 @@ function SkillProfile() {
     }
   };
 
-  // ✅ Add offered skill
+  //  Add offered skill
   const addOfferedSkill = () => {
     if (skillOffered.trim() !== "") {
       setOfferedList([...offeredList, skillOffered]);
@@ -42,7 +42,7 @@ function SkillProfile() {
     }
   };
 
-  // ✅ Add wanted skill
+  //  Add wanted skill
   const addWantedSkill = () => {
     if (skillWanted.trim() !== "") {
       setWantedList([...wantedList, skillWanted]);
@@ -50,7 +50,7 @@ function SkillProfile() {
     }
   };
 
-  // ✅ Save skills to backend
+  //  Save skills to backend
   const saveSkillsToBackend = async () => {
     if (!user) {
       alert("User not logged in");
@@ -78,14 +78,14 @@ function SkillProfile() {
         return;
       }
 
-      alert("✅ Skills saved successfully!");
+      alert("Skills saved successfully!");
 
       // Redirect to dashboard
       window.location.href = "/dashboard";
 
     } catch (error) {
       console.error("Frontend error:", error);
-      alert("❌ Failed to save skills");
+      alert(" Failed to save skills");
     }
   };
 
@@ -132,7 +132,7 @@ function SkillProfile() {
           ))}
         </ul>
 
-        {/* ✅ Save Button */}
+        {/*  Save Button */}
         <button
           onClick={saveSkillsToBackend}
           style={{

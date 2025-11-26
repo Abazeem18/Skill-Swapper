@@ -22,7 +22,7 @@ function Register() {
     if (error) {
       setErrorMessage(error.message);
     } else {
-      setMessage("✅ Registration successful! Redirecting to login...");
+      setMessage(" Registration successful! Redirecting to login...");
 
       setEmail("");
       setPassword("");
@@ -62,14 +62,14 @@ function Register() {
         >
           Already have an account? Login
         </Link>
-        {/* ✅ Success message */}
+        {/*  Success message */}
         {message && (
           <p style={{ color: "green", marginTop: "10px" }}>
             {message}
           </p>
         )}
 
-        {/* ❌ Error message */}
+        {/*  Error message */}
         {errorMessage && (
           <p style={{ color: "red", marginTop: "10px" }}>
             {errorMessage}

@@ -11,23 +11,22 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Middlewares
+//  Middlewares
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB Connection
+//  MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected"))
+  .then(() => console.log(" MongoDB Connected"))
   .catch((err) => console.log("❌ MongoDB Error:", err));
 
-// ✅ Test Route
+//  Test Route
 app.get("/", (req, res) => {
   res.send("Backend is running...");
 });
 
-// ================= USER & SKILLS =================
 
-// ✅ Save / Update Skills
+//  Save / Update Skills
 app.post("/save-skills", async (req, res) => {
   const { supabaseId, email, skillsOffered, skillsWanted } = req.body;
 
@@ -48,17 +47,17 @@ app.post("/save-skills", async (req, res) => {
 
     await user.save();
 
-    res.status(200).json({ message: "✅ Skills saved successfully!" });
+    res.status(200).json({ message: " Skills saved successfully!" });
   } catch (error) {
     console.error("Error saving skills:", error);
     res.status(500).json({
-      message: "❌ Error saving skills",
+      message: " Error saving skills",
       error: error.message
     });
   }
 });
 
-// ✅ Check if user already has skills
+//  Check if user already has skills
 app.get("/check-skills/:supabaseId", async (req, res) => {
   try {
     const user = await User.findOne({ supabaseId: req.params.supabaseId });
@@ -75,7 +74,7 @@ app.get("/check-skills/:supabaseId", async (req, res) => {
   }
 });
 
-// ✅ Search users by skill
+//  Search users by skill
 app.get("/search-users/:skill", async (req, res) => {
   try {
     const users = await User.find({
@@ -92,9 +91,9 @@ app.get("/search-users/:skill", async (req, res) => {
   }
 });
 
-// ================= SWAP REQUEST =================
 
-// ✅ Send swap request
+
+// Send swap request
 app.post("/send-request", async (req, res) => {
   const { fromUser, toUser, offeredSkill, requestedSkill } = req.body;
 
@@ -109,14 +108,14 @@ app.post("/send-request", async (req, res) => {
 
     await newRequest.save();
 
-    res.json({ message: "✅ Swap request sent successfully!" });
+    res.json({ message: " Swap request sent successfully!" });
   } catch (error) {
     console.error("Request error:", error);
-    res.status(500).json({ message: "❌ Failed to send request" });
+    res.status(500).json({ message: " Failed to send request" });
   }
 });
 
-// ✅ UPDATED: Get requests for BOTH sender and receiver
+//  UPDATED: Get requests for BOTH sender and receiver
 app.get("/requests/:userId", async (req, res) => {
   const userId = req.params.userId;
 
@@ -135,7 +134,7 @@ app.get("/requests/:userId", async (req, res) => {
   }
 });
 
-// ✅ Accept request
+// Accept request
 app.put("/accept-request/:id", async (req, res) => {
   try {
     await SwapRequest.findByIdAndUpdate(req.params.id, {
@@ -148,7 +147,7 @@ app.put("/accept-request/:id", async (req, res) => {
   }
 });
 
-// ✅ Reject request
+//  Reject request
 app.put("/reject-request/:id", async (req, res) => {
   try {
     await SwapRequest.findByIdAndUpdate(req.params.id, {
@@ -163,7 +162,7 @@ app.put("/reject-request/:id", async (req, res) => {
 
 // ================= CHAT =================
 
-// ✅ Send chat message
+//  Send chat message
 app.post("/send-message", async (req, res) => {
   const { senderId, receiverId, message } = req.body;
 
@@ -183,7 +182,7 @@ app.post("/send-message", async (req, res) => {
   }
 });
 
-// ✅ Get chat messages between two users
+//  Get chat messages between two users
 app.get("/messages/:user1/:user2", async (req, res) => {
   try {
     const { user1, user2 } = req.params;

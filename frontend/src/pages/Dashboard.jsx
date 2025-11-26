@@ -26,7 +26,7 @@ function Dashboard() {
     }
   };
 
-  // ✅ Fetch BOTH sent and received requests
+  //  Fetch BOTH sent and received requests
   const fetchRequests = async (userId) => {
     try {
       const res = await fetch(
@@ -35,7 +35,7 @@ function Dashboard() {
 
       const data = await res.json();
 
-      // ✅ Only accepted requests shown
+      //  Only accepted requests shown
       const acceptedRequests = data.filter(
         (req) => req.status === "accepted"
       );
@@ -69,7 +69,7 @@ function Dashboard() {
           )}
 
           {requests.map((req) => {
-            // ✅ Find the other user
+            //  Find the other user
             const otherUserId =
               req.fromUser === user.id ? req.toUser : req.fromUser;
 
